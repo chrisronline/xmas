@@ -37,7 +37,7 @@ function getRandomPerson(list) {
   return list[Math.floor(Math.random() * list.length)];
 }
 
-function getEligiblePersons(familyName, blacklist) {
+function getEligiblePersons(familyName) {
   return people.filter(person => person.familyName !== familyName && !person.receive);
 }
 
