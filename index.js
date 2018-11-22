@@ -1,10 +1,10 @@
-import { byFamily, rules } from './config.json';
+import { byFamily, rules, auth } from './config.json';
 import { msleep } from 'sleep';
 import twilio from 'twilio';
 import prompt from 'prompt';
 
-const accountSid = 'ACc6120af44db66632b8cfde73d5025647';
-const authToken = '37ba3a76fd909073b3c7a3f75489348e';
+const accountSid = auth.twilio.sid;
+const authToken = auth.twilio.token;
 const client = new twilio(accountSid, authToken);
 
 const people = Object.keys(byFamily)
@@ -39,10 +39,6 @@ function getRandomPerson(list) {
 
 function getEligiblePersons(familyName, blacklist) {
   return people.filter(person => person.familyName !== familyName && !person.receive);
-}
-
-function getByName(name) {
-  return people.find(person => person.name === name);
 }
 
 function isMustNot(who, get) {
@@ -116,6 +112,7 @@ prompt.get(['happy'], async (err, result) => {
         catch (e) {
           console.log('error', e);
         }
+        return;
       }
     }
   }
