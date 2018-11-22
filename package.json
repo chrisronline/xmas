@@ -1,0 +1,21 @@
+{
+  "name": "xmas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx babel-node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-1": "^6.24.1"
+  },
+  "dependencies": {
+    "prompt": "^1.0.0",
+    "sleep": "^5.1.1",
+    "twilio": "^3.10.0"
+  }
+}
